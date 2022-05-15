@@ -5,9 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TodoList"
         mc:Ignorable="d"
-        Title="TodoList" Height="450" Width="800">
+        Title="TodoList" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <DataGrid x:Name="dgTodoList" FontSize="16" FontWeight="Bold" Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="368*"/>
+            <ColumnDefinition Width="69*"/>
+            <ColumnDefinition Width="34*"/>
+            <ColumnDefinition Width="61*"/>
+            <ColumnDefinition Width="44*"/>
+            <ColumnDefinition Width="224*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dgTodoList" FontSize="16" FontWeight="Bold" Margin="10,10,10,10" Grid.ColumnSpan="6" Loaded="dgTodoList_Loaded">
             <DataGrid.Columns>
                 <DataGridTextColumn IsReadOnly="False" Header="CreateionDate" Width="180"/>
                 <DataGridCheckBoxColumn IsReadOnly="True" Header="Done" Width="80"/>
